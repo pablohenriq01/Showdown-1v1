@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://broirtianwp88"
-path="res://.godot/imported/sprite_3.png-c6fce77f400cd09cac98bfdcd12c96ed.ctex"
+uid="uid://dnckukutasc5y"
+path="res://.godot/imported/sprite_4.png-33c5761c810882901fb872fbc86538f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Guns/sprite_3.png"
-dest_files=["res://.godot/imported/sprite_3.png-c6fce77f400cd09cac98bfdcd12c96ed.ctex"]
+source_file="res://Sprites/Guns/sprite_4.png"
+dest_files=["res://.godot/imported/sprite_4.png-33c5761c810882901fb872fbc86538f9.ctex"]
 
 [params]
 
