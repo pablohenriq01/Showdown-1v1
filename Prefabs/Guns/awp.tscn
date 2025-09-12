@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnd6nslg3p66t"]
+
+[ext_resource type="Texture2D" uid="uid://dnckukutasc5y" path="res://Sprites/Guns/sprite_4.png" id="1_nopcu"]
+[ext_resource type="Script" path="res://Components/GunComponent.gd" id="1_xv4bb"]
+
+[node name="Awp" type="Node2D"]
+
+[node name="GunComponent" type="Node2D" parent="."]
+script = ExtResource("1_xv4bb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_nopcu")

@@ -4,10 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://coafqemoi3m00" path="res://Sprites/Guns/sprite_0.png" id="2_ttt0f"]
 
 [node name="Pistol" type="Node2D"]
+metadata/_edit_group_ = true
 
 [node name="GunComponent" type="Node2D" parent="."]
 script = ExtResource("1_m0atb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(2.74181e-06, 0.999997)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_ttt0f")
 offset = Vector2(100, 0)

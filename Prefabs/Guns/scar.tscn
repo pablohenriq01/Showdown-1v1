@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://btxwmb10h0uet"]
+
+[ext_resource type="Script" path="res://Components/GunComponent.gd" id="1_qdkse"]
+[ext_resource type="Texture2D" uid="uid://broirtianwp88" path="res://Sprites/Guns/sprite_3.png" id="2_frc86"]
+
+[node name="Scar" type="Node2D"]
+
+[node name="GunComponent" type="Node2D" parent="."]
+script = ExtResource("1_qdkse")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(2.74181e-06, 0.999997)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_frc86")
+offset = Vector2(100, 0)

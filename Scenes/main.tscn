@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr3vbmosx8oy7"]
+[gd_scene load_steps=4 format=3 uid="uid://dr3vbmosx8oy7"]
 
-[ext_resource type="Texture2D" uid="uid://djd4m37idkmv4" path="res://icon.svg" id="1_j2nju"]
+[ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="1_ke55b"]
 [ext_resource type="PackedScene" uid="uid://b5tyq3umllwx0" path="res://Prefabs/Guns/pistol.tscn" id="2_avd8y"]
+[ext_resource type="PackedScene" uid="uid://c11stncxkl5as" path="res://Prefabs/Players/player2.tscn" id="2_fuvwe"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(474, 296)
+position = Vector2(233, 179)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_j2nju")
+[node name="Player1" parent="Player" instance=ExtResource("1_ke55b")]
+visible = false
+
+[node name="Player2" parent="Player" instance=ExtResource("2_fuvwe")]
 
 [node name="Pistol" parent="Player" instance=ExtResource("2_avd8y")]
+texture_filter = 1
+position = Vector2(-4, 3)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(7, 7)
