@@ -6,17 +6,19 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player1" parent="." instance=ExtResource("1_ke55b")]
+position = Vector2(198, 179)
+
+[node name="Pistol" parent="Player1" instance=ExtResource("2_avd8y")]
+gun_offset_x = 70.0
+
+[node name="Player2" parent="." instance=ExtResource("2_fuvwe")]
 position = Vector2(233, 179)
 
-[node name="Player1" parent="Player" instance=ExtResource("1_ke55b")]
-visible = false
-
-[node name="Player2" parent="Player" instance=ExtResource("2_fuvwe")]
-
-[node name="Pistol" parent="Player" instance=ExtResource("2_avd8y")]
+[node name="Pistol" parent="Player2" instance=ExtResource("2_avd8y")]
 texture_filter = 1
-position = Vector2(-4, 3)
+gun_offset_x = 70.0
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(233, 179)
 zoom = Vector2(7, 7)

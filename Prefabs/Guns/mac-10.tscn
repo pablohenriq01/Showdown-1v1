@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl785dyo3a2ds"]
+[gd_scene load_steps=4 format=3 uid="uid://bl785dyo3a2ds"]
 
+[ext_resource type="Script" path="res://Scripts/Gun.gd" id="1_671cn"]
 [ext_resource type="Script" path="res://Components/GunComponent.gd" id="1_sgtde"]
 [ext_resource type="Texture2D" uid="uid://fuhk8m7h552w" path="res://Sprites/Guns/sprite_2.png" id="2_0iim4"]
 
 [node name="Mac-10" type="Node2D"]
+script = ExtResource("1_671cn")
 
 [node name="GunComponent" type="Node2D" parent="."]
 script = ExtResource("1_sgtde")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 2
 position = Vector2(2.74181e-06, 0.999997)
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_0iim4")
