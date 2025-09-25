@@ -1,24 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr3vbmosx8oy7"]
+[gd_scene load_steps=3 format=3 uid="uid://dr3vbmosx8oy7"]
 
-[ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="1_ke55b"]
-[ext_resource type="PackedScene" uid="uid://b5tyq3umllwx0" path="res://Prefabs/Guns/pistol.tscn" id="2_avd8y"]
-[ext_resource type="PackedScene" uid="uid://c11stncxkl5as" path="res://Prefabs/Players/player2.tscn" id="2_fuvwe"]
+[ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="1_o14ds"]
+[ext_resource type="PackedScene" uid="uid://b7xi7vd4nbucw" path="res://Prefabs/Guns/scar.tscn" id="2_jnp2a"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player1" parent="." instance=ExtResource("1_ke55b")]
-position = Vector2(198, 179)
+[node name="Player1" parent="." instance=ExtResource("1_o14ds")]
+position = Vector2(310, 267)
+metadata/_edit_group_ = true
 
-[node name="Pistol" parent="Player1" instance=ExtResource("2_avd8y")]
-gun_offset_x = 70.0
-
-[node name="Player2" parent="." instance=ExtResource("2_fuvwe")]
-position = Vector2(233, 179)
-
-[node name="Pistol" parent="Player2" instance=ExtResource("2_avd8y")]
-texture_filter = 1
-gun_offset_x = 70.0
+[node name="Scar" parent="Player1" instance=ExtResource("2_jnp2a")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(233, 179)
-zoom = Vector2(7, 7)
+position = Vector2(294, 176)
+anchor_mode = 0
+zoom = Vector2(2, 2)
