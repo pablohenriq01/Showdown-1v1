@@ -17,6 +17,8 @@ gun_offset_x = 20.0
 gun_offset_y = 0.0
 bullet_scene = ExtResource("4_t3h20")
 firerate = 5.0
+max_ammo = 30
+reload_time = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
