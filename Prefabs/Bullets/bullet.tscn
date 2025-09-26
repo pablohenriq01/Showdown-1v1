@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://brwlm2ldcsy37"]
+[gd_scene load_steps=4 format=3 uid="uid://brwlm2ldcsy37"]
 
 [ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_4q8tr"]
 [ext_resource type="Texture2D" uid="uid://bwfdx4s1v481h" path="res://Sprites/Bullets/bullet1.png" id="2_nvisj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvgmr"]
+radius = 4.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_4q8tr")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
@@ -13,3 +15,12 @@ texture = ExtResource("2_nvisj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D"]
 polygon = PackedVector2Array(-31, -56, 31, -56, 31, -36, 53, -35, 53, -14, 73, -14, 74, 49, 53, 49, 52, 70, 32, 70, 31, 92, -33, 92, -33, 70, -54, 70, -54, 48, -75, 48, -75, -14, -53, -14, -53, -35, -32, -35)
+
+[node name="Area2D" type="Area2D" parent="." groups=["Bullet"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Bullet"]]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_cvgmr")
+debug_color = Color(0.991617, 0, 0.263201, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

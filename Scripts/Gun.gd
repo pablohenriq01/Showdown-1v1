@@ -51,7 +51,8 @@ func fire() -> void:
 		bullet.dir = rotation
 	else:
 		bullet.rotation = rotation
-
+		
+	bullet.get_damage(damage_ammo)
 	get_tree().current_scene.add_child(bullet) 
 	bullet.global_position = fire_position.global_position
 	

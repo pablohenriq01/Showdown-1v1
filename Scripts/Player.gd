@@ -4,10 +4,10 @@ extends CharacterBody2D
 
 @onready var healthBar = $HealthBar
 
-var health 
+var health = 100
 
 func _ready() -> void:
-	health = 100
+
 	healthBar.init_health(health)
 	
 func get_input():
@@ -21,21 +21,17 @@ func get_input():
 		$AnimatedSprite2D.play("Run")
 		velocity = input_direction * speed
 
-
-	
 func _physics_process(delta: float) -> void:
-	set_health()
 	get_input()
 	move_and_slide()
 
-func set_health():
-	
-	healthBar.health = health
+func set_health(value: float):
+	health -= value
+	print(health)
 	if health <= 0:
 		die()
 	
 func die():
-	
 	$AnimatedSprite2D.play("Die")
-	await get_tree().create_timer(1.5)
+	await get_tree().create_timer(1.5).timeout
 	
