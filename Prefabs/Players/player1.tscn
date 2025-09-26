@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://dajesu6nopgs0"]
+[gd_scene load_steps=30 format=3 uid="uid://dajesu6nopgs0"]
 
 [ext_resource type="Texture2D" uid="uid://cer82p5hcx33a" path="res://Sprites/Players/P1/Die_p1.png" id="1_6hgx2"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_iom13"]
 [ext_resource type="Texture2D" uid="uid://dhl1xvcrhdvfc" path="res://Sprites/Players/P1/Idle_p1.png" id="1_rhstb"]
 [ext_resource type="Texture2D" uid="uid://doui4aiqdpgmc" path="res://Sprites/Players/P1/Run_p1.png" id="3_wfwm1"]
 [ext_resource type="Texture2D" uid="uid://ddtotfg7q7tuv" path="res://Sprites/Players/P1/Spawn_p1.png" id="4_5cmnl"]
@@ -190,6 +191,7 @@ animations = [{
 }]
 
 [node name="Player1" type="CharacterBody2D"]
+script = ExtResource("1_iom13")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

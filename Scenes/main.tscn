@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="1_o14ds"]
 [ext_resource type="PackedScene" uid="uid://b7xi7vd4nbucw" path="res://Prefabs/Guns/scar.tscn" id="2_jnp2a"]
 [ext_resource type="Script" path="res://Scripts/Guns/Scar.gd" id="3_au787"]
-[ext_resource type="PackedScene" uid="uid://brwlm2ldcsy37" path="res://Prefabs/Bullets/bullet_test.tscn" id="4_t3h20"]
+[ext_resource type="PackedScene" uid="uid://brwlm2ldcsy37" path="res://Prefabs/Bullets/bullet.tscn" id="4_t3h20"]
 
 [node name="Main" type="Node2D"]
 

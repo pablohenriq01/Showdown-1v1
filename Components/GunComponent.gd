@@ -6,7 +6,6 @@ class_name GunComponent
 func _ready() -> void:
 	pass 
 
-
 func _physics_process(delta: float) -> void:
 	mouse_follow()
 
