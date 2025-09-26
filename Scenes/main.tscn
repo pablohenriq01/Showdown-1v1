@@ -19,6 +19,11 @@ firerate = 5.0
 [node name="Player2" parent="." instance=ExtResource("5_lr20e")]
 position = Vector2(510, 117)
 
+[node name="Scar" parent="Player2" instance=ExtResource("2_jnp2a")]
+script = ExtResource("3_au787")
+bullet_scene = ExtResource("4_t3h20")
+firerate = 5.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(2, 2)

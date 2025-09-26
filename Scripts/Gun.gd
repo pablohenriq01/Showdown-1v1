@@ -60,10 +60,10 @@ func fire() -> void:
 
 	if current_ammo <= 0:
 		start_reload()
-	
-	print("Ammo = ", current_ammo, " / ", max_ammo)
-	print("Damage = ", damage_ammo)
-	
+
+	# print("Ammo = ", current_ammo, " / ", max_ammo)
+	# print("Damage = ", damage_ammo)
+
 func shoot() -> void:
 	if Input.is_action_pressed("ui_accept") and cool_down_timer >= cooldown:
 		fire()
