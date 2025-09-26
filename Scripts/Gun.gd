@@ -9,6 +9,7 @@ class_name Gun
 
 @export var max_ammo: int = 30
 @export var reload_time: float = 2.0
+@export var damage_ammo: float = 1.0
 
 @onready var cooldown: float = 1.0 / max(firerate, 0.001)
 @onready var cool_down_timer: float = cooldown 
@@ -53,14 +54,15 @@ func fire() -> void:
 
 	get_tree().current_scene.add_child(bullet) 
 	bullet.global_position = fire_position.global_position
-
+	
 	current_ammo -= 1
 
 	if current_ammo <= 0:
 		start_reload()
 	
 	print("Ammo = ", current_ammo, " / ", max_ammo)
-
+	print("Damage = ", damage_ammo)
+	
 func shoot() -> void:
 	if Input.is_action_pressed("ui_accept") and cool_down_timer >= cooldown:
 		fire()

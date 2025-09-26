@@ -1,24 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr3vbmosx8oy7"]
+[gd_scene load_steps=7 format=3 uid="uid://dr3vbmosx8oy7"]
 
 [ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="1_o14ds"]
 [ext_resource type="PackedScene" uid="uid://b7xi7vd4nbucw" path="res://Prefabs/Guns/scar.tscn" id="2_jnp2a"]
 [ext_resource type="Script" path="res://Scripts/Guns/Scar.gd" id="3_au787"]
 [ext_resource type="PackedScene" uid="uid://brwlm2ldcsy37" path="res://Prefabs/Bullets/bullet.tscn" id="4_t3h20"]
+[ext_resource type="PackedScene" uid="uid://c11stncxkl5as" path="res://Prefabs/Players/player2.tscn" id="5_lr20e"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="6_mfj6j"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_o14ds")]
 position = Vector2(146, 111)
-metadata/_edit_group_ = true
 
 [node name="Scar" parent="Player1" instance=ExtResource("2_jnp2a")]
 script = ExtResource("3_au787")
-gun_offset_x = 20.0
-gun_offset_y = 0.0
 bullet_scene = ExtResource("4_t3h20")
 firerate = 5.0
-max_ammo = 30
-reload_time = 2.0
+
+[node name="Player2" parent="." instance=ExtResource("5_lr20e")]
+position = Vector2(510, 117)
+script = ExtResource("6_mfj6j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
