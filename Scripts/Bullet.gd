@@ -22,5 +22,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("Player"):
 		var p = area.get_parent()
+		p.set_health(damage_received)
 		p.healthBar.set_health(damage_received)
 		queue_free()
