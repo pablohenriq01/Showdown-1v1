@@ -14,7 +14,6 @@ var up: String
 @export_enum("down", "down_p2")
 var down: String
 
-
 @onready var healthBar = $HealthBar
 
 func _ready() -> void:
@@ -34,12 +33,17 @@ func get_input():
 
 	if input_direction.x != 0:
 		$AnimatedSprite2D.flip_h = input_direction.x < 0
-
+func set_health(damage: float) -> void:
+	health -= damage
+	
 func _physics_process(delta: float) -> void:
 	get_input()
 	move_and_slide()
+	die()
 
 func die():
-	$AnimatedSprite2D.play("Die")
-	await get_tree().create_timer(1.5).timeout
 	
+	if health <= 0:
+		$AnimatedSprite2D.play("Die")
+		await get_tree().create_timer(1.5).timeout
+		
