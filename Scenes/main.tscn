@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dr3vbmosx8oy7"]
 
 [ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="1_o14ds"]
-[ext_resource type="PackedScene" uid="uid://7h6llb8f0b4y" path="res://Prefabs/Guns/awp.tscn" id="2_xsv55"]
+[ext_resource type="PackedScene" uid="uid://b7xi7vd4nbucw" path="res://Prefabs/Guns/scar.tscn" id="2_ndpia"]
 [ext_resource type="PackedScene" uid="uid://c11stncxkl5as" path="res://Prefabs/Players/player2.tscn" id="5_lr20e"]
 
 [node name="Main" type="Node2D"]
@@ -9,11 +9,12 @@
 [node name="Player1" parent="." instance=ExtResource("1_o14ds")]
 position = Vector2(146, 111)
 
-[node name="Awp" parent="Player1" instance=ExtResource("2_xsv55")]
-firerate = 0.5
+[node name="Scar" parent="Player1" instance=ExtResource("2_ndpia")]
 
 [node name="Player2" parent="." instance=ExtResource("5_lr20e")]
 position = Vector2(510, 117)
+
+[node name="Scar" parent="Player2" instance=ExtResource("2_ndpia")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

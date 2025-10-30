@@ -11,6 +11,8 @@ class_name Gun
 @export var reload_time: float = 2.0
 @export var damage_ammo: float = 1.0
 
+@export var owner_player: Node = null
+
 @onready var cooldown: float = 1.0 / max(firerate, 0.001)
 @onready var cool_down_timer: float = cooldown 
 @onready var gun_sprite: Sprite2D = get_node("Sprite2D")
@@ -21,6 +23,7 @@ var reloading: bool = false
 var reload_timer: float = 0.0
 
 func _ready() -> void:
+	owner_player = get_parent()
 	adjust_offset()
 
 func _process(delta: float) -> void:
@@ -65,6 +68,9 @@ func fire() -> void:
 	# print("Damage = ", damage_ammo)
 
 func shoot() -> void:
+	if owner_player and "alive" in owner_player and not owner_player.alive:
+		queue_free()
+	
 	if Input.is_action_pressed("ui_accept") and cool_down_timer >= cooldown:
 		fire()
 		cool_down_timer = 0.0
@@ -81,7 +87,7 @@ func start_reload() -> void:
 	reloading = true
 	reload_timer = 0.0
 	print("Reloading...")
-
+	
 func update_reload(delta: float) -> void:
 	if not reloading:
 		return
@@ -91,3 +97,4 @@ func update_reload(delta: float) -> void:
 		reloading = false
 		reload_timer = 0.0
 		print("Reloaded: Ammo = ", current_ammo)
+		
