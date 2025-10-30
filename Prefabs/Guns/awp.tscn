@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://7h6llb8f0b4y"]
+[gd_scene load_steps=5 format=3 uid="uid://7h6llb8f0b4y"]
 
 [ext_resource type="Script" path="res://Scripts/Gun.gd" id="1_2cuyv"]
 [ext_resource type="Texture2D" uid="uid://dnckukutasc5y" path="res://Sprites/Guns/sprite_4.png" id="1_nopcu"]
 [ext_resource type="Script" path="res://Components/GunComponent.gd" id="1_xv4bb"]
+[ext_resource type="PackedScene" uid="uid://brwlm2ldcsy37" path="res://Prefabs/Bullets/bullet.tscn" id="2_dx5uo"]
 
 [node name="Awp" type="Node2D"]
 script = ExtResource("1_2cuyv")
+bullet_scene = ExtResource("2_dx5uo")
+firerate = 2.5
+max_ammo = 5
+reload_time = 2.5
+damage_ammo = 50.0
 
 [node name="GunComponent" type="Node2D" parent="."]
 script = ExtResource("1_xv4bb")
@@ -14,3 +20,7 @@ script = ExtResource("1_xv4bb")
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("1_nopcu")
 offset = Vector2(150, 0)
+
+[node name="FirePosition" type="Marker2D" parent="Sprite2D"]
+position = Vector2(162.5, -6.25)
+scale = Vector2(39.0625, 39.0625)
