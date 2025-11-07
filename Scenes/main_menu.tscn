@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bybqi4occ34en"]
+[gd_scene load_steps=8 format=3 uid="uid://bybqi4occ34en"]
 
 [ext_resource type="Texture2D" uid="uid://c6nij7mutxngx" path="res://Resources/Photos-Gifs/BackGroundMoon.png" id="1_idcti"]
 [ext_resource type="FontFile" uid="uid://cfndooqsfrbh8" path="res://Resources/Fonts/Daydream.otf" id="1_olve8"]
@@ -7,6 +7,22 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc4lt"]
 texture = ExtResource("1_idcti")
 modulate_color = Color(0.617455, 0.617455, 0.617455, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3ka5"]
+bg_color = Color(0.577008, 0.577008, 0.577008, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjn14"]
+bg_color = Color(0.230315, 0.230315, 0.230315, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rxko"]
 bg_color = Color(1, 1, 1, 1)
@@ -55,6 +71,8 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_olve8")
 theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_b3ka5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xjn14")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4rxko")
 text = "Start Game"
 
@@ -64,6 +82,8 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_olve8")
 theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_b3ka5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xjn14")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4rxko")
 text = "Exit "
 
