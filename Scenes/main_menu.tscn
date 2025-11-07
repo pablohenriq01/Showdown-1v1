@@ -173,22 +173,22 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7jnac")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ogt36")
 text = "X"
 
-[node name="Panel" type="Panel" parent="PopUp"]
+[node name="Panel_Multimaps" type="Panel" parent="PopUp"]
 layout_mode = 0
-offset_left = 260.5
+offset_left = 261.0
 offset_top = 16.0
-offset_right = 446.5
+offset_right = 448.0
 offset_bottom = 376.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ysb67")
 metadata/_edit_group_ = true
 
-[node name="Modo de mapa" type="Label" parent="PopUp"]
+[node name="Title" type="Label" parent="PopUp/Panel_Multimaps"]
 texture_filter = 2
 layout_mode = 2
-offset_left = 263.5
-offset_top = 21.0
-offset_right = 442.5
-offset_bottom = 44.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 182.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
@@ -197,12 +197,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_group_ = true
 
-[node name="Multimaps" type="Button" parent="PopUp"]
+[node name="Multimaps" type="Button" parent="PopUp/Panel_Multimaps"]
 layout_mode = 2
-offset_left = 264.0
-offset_top = 62.0
-offset_right = 443.0
-offset_bottom = 249.0
+offset_left = 3.5
+offset_top = 46.0
+offset_right = 182.5
+offset_bottom = 233.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -211,13 +211,13 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_r4cny")
 theme_override_styles/normal = SubResource("StyleBoxTexture_r4cny")
 metadata/_edit_group_ = true
 
-[node name="Descrição" type="Label" parent="PopUp"]
+[node name="Description" type="Label" parent="PopUp/Panel_Multimaps"]
 texture_filter = 2
 layout_mode = 2
-offset_left = 263.5
-offset_top = 256.0
-offset_right = 442.5
-offset_bottom = 357.0
+offset_left = 3.0
+offset_top = 240.0
+offset_right = 182.0
+offset_bottom = 341.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
@@ -231,4 +231,4 @@ metadata/_edit_group_ = true
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="PopUp/Close_popup" to="PopUp" method="_on_close_pressed"]
-[connection signal="pressed" from="PopUp/Multimaps" to="PopUp" method="_on_mode_multimaps_pressed"]
+[connection signal="pressed" from="PopUp/Panel_Multimaps/Multimaps" to="PopUp" method="_on_mode_multimaps_pressed"]
