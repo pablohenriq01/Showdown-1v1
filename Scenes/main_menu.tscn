@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bybqi4occ34en"]
+[gd_scene load_steps=17 format=3 uid="uid://bybqi4occ34en"]
 
 [ext_resource type="Texture2D" uid="uid://c6nij7mutxngx" path="res://Resources/Photos/BackGroundMoon.png" id="1_idcti"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_o28wp"]
 [ext_resource type="FontFile" uid="uid://cfndooqsfrbh8" path="res://Resources/Fonts/Daydream.otf" id="1_olve8"]
 [ext_resource type="FontFile" uid="uid://c1dovo3m7nsjc" path="res://Resources/Fonts/GrapeSoda.ttf" id="3_5c5e7"]
 [ext_resource type="Script" path="res://Scripts/pop_up_menu.gd" id="5_mn4v1"]
+[ext_resource type="Texture2D" uid="uid://brxlg0hd2hnqs" path="res://Resources/Photos/PhotoMultimaps.png" id="6_fj0yh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc4lt"]
 texture = ExtResource("1_idcti")
@@ -36,6 +37,7 @@ shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djsp3"]
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jnac"]
 bg_color = Color(0.759532, 0, 0.0433616, 1)
@@ -50,6 +52,17 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysb67"]
+draw_center = false
+shadow_size = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4bg2"]
+texture = ExtResource("6_fj0yh")
+modulate_color = Color(0.513233, 0.513233, 0.513233, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4cny"]
+texture = ExtResource("6_fj0yh")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -128,7 +141,6 @@ text = "Showdown 1v1
 "
 
 [node name="PopUp" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,7 +156,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_djsp3")
 script = ExtResource("5_mn4v1")
 
-[node name="Button" type="Button" parent="PopUp"]
+[node name="Close_popup" type="Button" parent="PopUp"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -161,6 +173,62 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7jnac")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ogt36")
 text = "X"
 
+[node name="Panel" type="Panel" parent="PopUp"]
+layout_mode = 0
+offset_left = 260.5
+offset_top = 16.0
+offset_right = 446.5
+offset_bottom = 376.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ysb67")
+metadata/_edit_group_ = true
+
+[node name="Modo de mapa" type="Label" parent="PopUp"]
+texture_filter = 2
+layout_mode = 2
+offset_left = 263.5
+offset_top = 21.0
+offset_right = 442.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Multi-mapas"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Multimaps" type="Button" parent="PopUp"]
+layout_mode = 2
+offset_left = 264.0
+offset_top = 62.0
+offset_right = 443.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxTexture_d4bg2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r4cny")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r4cny")
+metadata/_edit_group_ = true
+
+[node name="Descrição" type="Label" parent="PopUp"]
+texture_filter = 2
+layout_mode = 2
+offset_left = 263.5
+offset_top = 256.0
+offset_right = 442.5
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Irá tirar um md1 em
+todos os mapas, quem 
+ganhar 3 mapas 
+primeiro ganha a série!"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="PopUp/Button" to="PopUp" method="_on_close_pressed"]
+[connection signal="pressed" from="PopUp/Close_popup" to="PopUp" method="_on_close_pressed"]
+[connection signal="pressed" from="PopUp/Multimaps" to="PopUp" method="_on_mode_multimaps_pressed"]

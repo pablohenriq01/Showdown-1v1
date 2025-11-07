@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 func _on_close_pressed() -> void:
 	$".".visible = false
 	pass 
+
+
+func _on_mode_multimaps_pressed() -> void:
+	pass # Replace with function body.
