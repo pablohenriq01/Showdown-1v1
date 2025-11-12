@@ -1,11 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://bmvmputyrr2bk"]
+[gd_scene load_steps=6 format=4 uid="uid://bmvmputyrr2bk"]
 
 [ext_resource type="Texture2D" uid="uid://drnucyp57adrr" path="res://Resources/Maps/kenney_desert-shooter-pack_1.0/PNG/Tiles/Tilemap/tilemap_packed.png" id="1_6ihdf"]
 [ext_resource type="Texture2D" uid="uid://btf54o73t8eos" path="res://Resources/Maps/World of Solaria Demo Pack Update 04/16x16/Tilesets/New/Solaria Demo Tiles.png" id="2_r5425"]
-[ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="3_371g4"]
-[ext_resource type="PackedScene" uid="uid://b7xi7vd4nbucw" path="res://Prefabs/Guns/scar.tscn" id="4_rbbk2"]
-[ext_resource type="Script" path="res://Scripts/Guns/Scar.gd" id="5_4xjla"]
-[ext_resource type="PackedScene" uid="uid://c11stncxkl5as" path="res://Prefabs/Players/player2.tscn" id="6_kuyxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c02n6"]
 texture = ExtResource("1_6ihdf")
@@ -722,9 +718,6 @@ physics_layer_0/collision_layer = 1
 sources/7 = SubResource("TileSetAtlasSource_c02n6")
 sources/8 = SubResource("TileSetAtlasSource_1i4hq")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkqv2"]
-size = Vector2(13, 12)
-
 [node name="Mapa_2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -739,27 +732,6 @@ tile_set = SubResource("TileSet_y22a3")
 [node name="TileMapLayer3" type="TileMapLayer" parent="TileMapLayer"]
 tile_map_data = PackedByteArray("AAAXAAYACAAUAAMAAAAXAAcACAAUAAQAAAAXAAsACAAUAAMAAAAXAAwACAAUAAQAAAARABIACAATAAMAAAARABMACAATAAQAAAAUABEACAATAAgAAAAUABIACAATAAkAAAAOAAUACAATAAgAAAAOAAYACAATAAkAAAAPAAUACAATAAgAAAAPAAYACAATAAkAAAAQAAUACAATAAgAAAAQAAYACAATAAkAAAAQABMACAAVAAMAAFA=")
 tile_set = SubResource("TileSet_y22a3")
-
-[node name="Player1" parent="." instance=ExtResource("3_371g4")]
-position = Vector2(221, 198)
-metadata/_edit_group_ = true
-
-[node name="Scar" parent="Player1" instance=ExtResource("4_rbbk2")]
-position = Vector2(8, 0)
-script = ExtResource("5_4xjla")
-firerate = 5.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-position = Vector2(-1.5, -1)
-shape = SubResource("RectangleShape2D_tkqv2")
-
-[node name="Player2" parent="." instance=ExtResource("6_kuyxd")]
-position = Vector2(293, 218)
-metadata/_edit_group_ = true
-
-[node name="Scar" parent="Player2" instance=ExtResource("4_rbbk2")]
-script = ExtResource("5_4xjla")
-firerate = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(10, 11)

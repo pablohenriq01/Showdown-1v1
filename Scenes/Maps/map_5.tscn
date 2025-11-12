@@ -1,11 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://bl3j78h1lxy77"]
+[gd_scene load_steps=5 format=4 uid="uid://bl3j78h1lxy77"]
 
 [ext_resource type="Texture2D" uid="uid://cb7wk512gjls5" path="res://Resources/Maps/Background/image.png" id="1_x80wf"]
 [ext_resource type="Texture2D" uid="uid://bcj0vtq45qcag" path="res://Sprites/Maps/DungeonMap.png" id="2_dle0u"]
-[ext_resource type="PackedScene" uid="uid://dajesu6nopgs0" path="res://Prefabs/Players/player1.tscn" id="3_pmxj5"]
-[ext_resource type="PackedScene" uid="uid://b7xi7vd4nbucw" path="res://Prefabs/Guns/scar.tscn" id="4_joc4d"]
-[ext_resource type="PackedScene" uid="uid://c11stncxkl5as" path="res://Prefabs/Players/player2.tscn" id="5_ubdw5"]
-[ext_resource type="PackedScene" uid="uid://b5tyq3umllwx0" path="res://Prefabs/Guns/pistol.tscn" id="6_dlum6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dvs1"]
 texture = ExtResource("2_dle0u")
@@ -297,14 +293,3 @@ rendering_quadrant_size = 5
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(293, 168)
 zoom = Vector2(2, 2)
-
-[node name="Player1" parent="." instance=ExtResource("3_pmxj5")]
-position = Vector2(40, 67)
-
-[node name="Scar" parent="Player1" instance=ExtResource("4_joc4d")]
-position = Vector2(-4, -2)
-
-[node name="Player2" parent="." instance=ExtResource("5_ubdw5")]
-position = Vector2(208, 67)
-
-[node name="Pistol" parent="Player2" instance=ExtResource("6_dlum6")]
