@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cycgnno3secjb"]
+
+[ext_resource type="Script" path="res://Components/GunComponent.gd" id="1_d7b6d"]
+[ext_resource type="Script" path="res://Scripts/Gun.gd" id="1_ld3sb"]
+[ext_resource type="Texture2D" uid="uid://bw3ic1as4m7bj" path="res://Sprites/Guns/sprite_1.png" id="2_rr7e3"]
+
+[node name="Smg" type="Node2D"]
+script = ExtResource("1_ld3sb")
+
+[node name="GunComponent" type="Node2D" parent="."]
+script = ExtResource("1_d7b6d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_rr7e3")
+offset = Vector2(100, 0)
