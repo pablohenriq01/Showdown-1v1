@@ -8,7 +8,6 @@
 [node name="Awp" type="Node2D"]
 script = ExtResource("1_2cuyv")
 bullet_scene = ExtResource("2_dx5uo")
-firerate = 2.5
 max_ammo = 5
 reload_time = 2.5
 damage_ammo = 50.0

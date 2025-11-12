@@ -8,6 +8,7 @@
 [node name="Mac-10" type="Node2D"]
 script = ExtResource("1_671cn")
 bullet_scene = ExtResource("2_vo2vb")
+firerate = 10.0
 max_ammo = 25
 reload_time = 1.5
 damage_ammo = 20.0
