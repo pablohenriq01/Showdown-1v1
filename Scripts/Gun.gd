@@ -22,16 +22,34 @@ class_name Gun
 var reloading: bool = false
 var reload_timer: float = 0.0
 
+# Variáveis locais para guardar as ações
+var action_up: String
+var action_down: String
+var action_left: String
+var action_right: String
+
 func _ready() -> void:
-	owner_player = get_parent()
+	var parent = get_parent()
+
+	action_up = parent.up_look
+	action_down = parent.down_look
+	action_left = parent.left_look
+	action_right = parent.right_look
+	
+	owner_player = parent 
+	
 	adjust_offset()
 
 func _process(delta: float) -> void:
-	look_at(get_global_mouse_position())
+	
+	var aim_direction = Input.get_vector(action_left, action_right, action_up, action_down)
+
+	if aim_direction.length() > 0.1:
+		self.look_at(self.global_position + aim_direction)
+	
 	shoot()
 	shooting_cooldown(delta)
 	update_reload(delta)
-	
 func adjust_offset() -> void:
 	if gun_sprite:
 		gun_sprite.offset = Vector2(gun_offset_x, gun_offset_y)
@@ -71,7 +89,7 @@ func shoot() -> void:
 	if owner_player and "alive" in owner_player and not owner_player.alive:
 		queue_free()
 	
-	if Input.is_action_pressed("ui_accept") and cool_down_timer >= cooldown:
+	if Input.is_action_pressed(get_parent().fire) and cool_down_timer >= cooldown:
 		fire()
 		cool_down_timer = 0.0
 

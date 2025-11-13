@@ -14,6 +14,21 @@ var up: String
 @export_enum("down", "down_p2")
 var down: String
 
+@export_enum("fire_p1", "fire_p2")
+var fire: String
+
+@export_enum("up_look_p1", "up_look_p2")
+var up_look: String
+
+@export_enum("left_look_p1", "left_look_p2")
+var left_look: String
+
+@export_enum("right_look_p1", "right_look_p2")
+var right_look: String
+
+@export_enum("down_look_p1", "down_look_p2")
+var down_look: String
+
 @onready var healthBar = $HealthBar
 
 var alive = true
@@ -46,7 +61,7 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	if health <= 0 and alive:
-		print("morreu")
+		speed = 0
 		alive = false
 		$AnimatedSprite2D.play("Die")
 		await get_tree().create_timer(2).timeout

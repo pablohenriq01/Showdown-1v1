@@ -197,6 +197,11 @@ left = "left"
 right = "right"
 up = "up"
 down = "down"
+fire = "fire_p1"
+up_look = "up_look_p1"
+left_look = "left_look_p1"
+right_look = "right_look_p1"
+down_look = "down_look_p1"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
